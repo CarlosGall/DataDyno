@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+    <title>DataDyno</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="profile-1.jpg" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Perfil</span>
+                    <span class="profession">Administrador</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#" id="cargos-link">
+                            <i class='bx bxs-user-detail icon'></i>
+                            <span class="text nav-text">Cargos</span>
+                            <i class="arrow ph-gold ph-caret-down"></i>
+                        </a>
+                    </li>
+                    <li class="nav-link" id="empleados-link">
+                        <a href="#">
+                            <i class='bx bxs-user-check icon'></i>
+                            <span class="text nav-text">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="nav-link" id="clientes-link">
+                        <a href="#" id="clientes-link">
+                            <i class='bx bx-male-female icon'></i>
+                            <span class="text nav-text">Clientes</span>
+                        </a>
+                    </li>
+                    <li class="nav-link" id="proveedores-link">
+                        <a href="#">
+                            <i class='bx bxs-face icon'></i>
+                            <span class="text nav-text">Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="nav-link" id="productos-link">
+                        <a href="#">
+                            <i class='bx bxs-drink icon'></i>
+                            <span class="text nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link" id="pedidos-link">
+                        <a href="#">
+                            <i class='bx bx-cart-add icon'></i>
+                            <span class="text nav-text">Pedidos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="nav-link">
+                    <a href="#" id="logout-link">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Salir</span>
+                        
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+
+                    <span class="mode-text text">Modo noche</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                <li class="search-box">
+                    
+                    
+                </li>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Menu Administrador</div><br><br>
+        <center>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-column4" style="display: none;">
+                        <label for="insert-empleado">REGISTRAR CARGO</label><br>
+                        <div class="form-row">
+                            <label for="nombre_cargo">Nombre</label>
+                            <input type="text" id="nombre_cargo"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="area">Área</label>
+                            <input type="text" id="area"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="descripcion">Descripción</label>
+                            <input type="text" id="descripcion" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="registrar_cargo" type="submit">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-column3" style="display: none;">
+                        <label for="update-empleado">ACTUALIZAR CARGO</label><br>
+                        <div class="form-row">
+                            <label for="rol">Cargo:</label>
+                            <select id="miComboBox" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un cargo</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="nombre_cargo">Nombre</label>
+                            <input type="text" id="nombre_cargo_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="area">Área</label>
+                            <input type="text" id="area_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="descripcion">Descripción</label>
+                            <input type="text" id="descripcion_actualizar" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="actualizar_cargo" type="submit">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="datagrid-container" style="display: none;">
+                        <label for="select-empleado">SELECCIONAR CARGO</label><br>
+                        <input type="text" id="searchInput" placeholder="Buscar..."><br>
+                        <table class="datagrid">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Área</th>
+                                    <th>Descripción</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datagrid-body">
+
+                            </tbody>
+                            <button id="consultarBtn">Consultar</button>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text"></div><br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-column1" style="display: none;">
+                        <label for="insert-empleado">REGISTRAR EMPLEADO</label><br>
+                        <div class="form-row">
+                            <label for="rol">Cargo:</label>
+                            <select id="miComboBox_empleado_cargo" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un cargo</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="cedula">Cédula</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="cedula_empleado"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre_empleado"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido_empleado"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion_empleado" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="telefono_empleado"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="correo">Correo</label>
+                            <input type="text" id="correo_empleado" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="registrar_empleado">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-column2" style="display: none;">
+                        <label for="insert-empleado-">ACTUALIZAR EMPLEADO</label><br>
+                        <div class="form-row">
+                            <label for="rol">Empleado:</label>
+                            <select id="miComboBox_empleado_actualizar" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un empleado</option>
+                            </select>
+                            <label for="rol">Cargo:</label>
+                            <select id="miComboBox_empleado_cargo_2" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un cargo</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="cedula">Cédula</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="cedula_empleado_actualizar" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre_empleado_actualizar" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido_empleado_actualizar" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion_empleado_actualizar" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="telefono_empleado_actualizar" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="correo">Correo</label>
+                            <input type="text" id="correo_empleado_actualizar" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="actualizar_empleado">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="datagrid-container-empleado" style="display: none;">
+                        <label for="select-empleado">SELECCIONAR EMPLEADO</label><br>
+                        <input type="text" id="searchInputempleado" placeholder="Buscar..."><br>
+                        <table class="datagrid">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cargo</th>
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Teléfono</th>
+                                    <th>Dirección</th>
+                                    <th>Correo</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datagrid-body-empleado">
+        
+                            </tbody>
+                            <button id="consultarBtn-empleado">Consultar</button>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text"></div><br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-column5" style="display: none;">
+                        <label for="insert-cliente">REGISTRAR CLIENTE</label><br><br>
+                        <div class="form-row">
+                            <label for="cedula">Cédula</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="cedula"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="telefono"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="correo">Correo</label>
+                            <input type="text" id="correo" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="registrar_cliente" type="submit">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-column6" style="display: none;">
+                        <label for="update-cliente">ACTUALIZAR CLIENTE</label><br><br>
+                        <div class="form-row">
+                        <label for="rol">ID:</label>
+                        <select id="miComboBox_cliente" class="styled-select">
+                            <option value="opcion1" disabled selected>Selecciona un cliente</option>
+                        </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="cedula">Cédula</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="cedula_actualizar"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="telefono_actualizar"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="correo">Correo</label>
+                            <input type="text" id="correo_actualizar" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="actualizar_cliente" type="submit">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="column1" style="display: none;">
+                    </div>
+                    <div class="datagrid-container-cliente" style="display: none;">
+                        <label for="select-cliente">SELECCIONAR CLIENTE</label><br><br>
+                        <input type="text" id="searchInputcliente" placeholder="Buscar..."><br>
+                        <table class="datagrid">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datagrid-body-cliente">
+            
+                            </tbody>
+                            <button id="consultarBtn-cliente">Consultar</button>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-column7" style="display: none;">
+                        <label for="insert-proveedor">REGISTRAR PROVEEDOR</label><br><br>
+                        <div class="form-row">
+                            <label for="nit">Nombre</label>
+                            <input type="text" id="nit_registrar_proveedor"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="razon social">Razón social</label>
+                            <input type="text" id="razonsocial_registrar_proveedor"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="area">Área</label>
+                            <input type="text" id="area_registrar_proveedor"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="telefono_registrar_proveedor"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="correo">Correo</label>
+                            <input type="text" id="correo_registrar_proveedor" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="registrar_proveedor" type="submit">Registrar</button>
+                        </div>
+                    </div>
+            
+                </div>
+                <div class="col">
+
+                    <div class="form-column8" style="display: none;">
+                        <label for="update-proveedor-">ACTUALIZAR PROVEEDOR</label><br><br>
+                        <div class="form-row">
+                            <label for="rol">ID:</label>
+                            <select id="miComboBox_proveedor_actualizar" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un proveedor</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="nit">Nombre</label>
+                            <input type="text" id="nit_proveedor_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="razon_social">Razón social</label>
+                            <input type="text" id="razonsocial_proveedor_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="area">Área</label>
+                            <input type="text" id="area_proveedor_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" pattern="[0-9]" maxlength="10" id="telefono_proveedor_actualizar"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="correo">Correo</label>
+                            <input type="text" id="correo_proveedor_actualizar" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="actualizar_proveedor">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="datagrid-container-proveedor" style="display: none;">
+                        <label for="select-proveedor">SELECCIONAR PROVEEDOR</label><br><br>
+                        <input type="text" id="searchInputproveedor" placeholder="Buscar..."><br>
+                        <table class="datagrid">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Razón social</th>
+                                    <th>Área</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datagrid-body-proveedor">
+            
+                            </tbody>
+                            <button id="consultarBtn-proveedor">Consultar</button>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="text"></div><br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-column11" style="display: none;">
+                        <label for="insert-producto">REGISTRAR PRODUCTO</label><br>
+                        <div class="form-row">
+                            <label for="producto">Producto</label>
+                            <input type="text" id="producto_registrar_producto"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="precio">Precio</label>
+                            <input type="text" id="precio_registrar_producto"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="unidades">Unidades</label>
+                            <input type="text" id="unidades_registrar_producto"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="descripcion">Descripción</label>
+                            <input type="text" id="descripcion_registrar_producto" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="registrar_producto" type="submit">Registrar</button>
+                        </div>
+                    </div>            
+                </div>
+                <div class="col">
+                    <div class="form-column12" style="display: none;">
+                        <label for="update-producto-">ACTUALIZAR PRODUCTO</label><br>
+                        <div class="form-row">
+                            <label for="rol">ID:</label>
+                            <select id="miComboBox_producto_actualizar" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un producto</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="producto">Producto</label>
+                            <input type="text" id="producto_producto_actualizar"
+                                onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <label for="precio">Precio</label>
+                            <input type="text" id="precio_producto_actualizar"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="unidades">Unidades</label>
+                            <input type="text" id="unidades_producto_actualizar"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="descripcion">Descripción</label>
+                            <input type="text" id="descripcion_producto_actualizar" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="actualizar_producto">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="datagrid-container-producto" style="display: none;">
+                        <label for="select-producto">SELECCIONAR PRODUCTO</label><br>
+                        <input type="text" id="searchInputproducto" placeholder="Buscar..."><br>
+                        <table class="datagrid">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Unidades</th>
+                                    <th>Descripción</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datagrid-body-producto">
+            
+                            </tbody>
+                            <button id="consultarBtn-producto">Consultar</button>
+                        </table>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="form-column9" style="display: none;">
+                        <label for="insert-pedido">REGISTRAR PEDIDO</label><br><br>
+                        <div class="form-row">
+                            <label for="rol">Proveedor:</label>
+                            <select id="miComboBox_pedido_proveedor" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un proveedor</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="rol">Empleado:</label>
+                            <select id="miComboBox_pedido_empleado" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un empleado</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="rol">Producto:</label>
+                            <select id="miComboBox_pedido_producto" class="styled-select">
+                                <option value="opcion1" disabled selected>Selecciona un producto</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="precio">Precio</label>
+                            <input type="text" id="precio_registrar_pedido"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required disabled>
+                        </div>
+                        <div class="form-row">
+                            <label for="unidades">Unidades</label>
+                            <input type="text" id="unidades_registrar_pedido"
+                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="descripcion">Total</label>
+                            <input type="text" id="descripcion_registrar_pedido" required disabled>
+                        </div>
+                        <div class="form-row">
+                            <button id="registrar_pedido" type="submit">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="imagen-empresa" style="display: none;">
+                        <img src="datady (1).jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="datagrid-container-pedido" style="display: none;">
+                        <label for="select-pedido">SELECCIONAR PEDIDO</label><br><br>
+                        <table class="datagrid">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Código proveedor</th>
+                                    <th>Id empleado</th>
+                                    <th>Código producto</th>
+                                    <th>Precio</th>
+                                    <th>Unidades</th>
+                                    <th>Total</th>
+                                    <th>Imprimir</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datagrid-body-pedido">
+            
+                            </tbody>
+                            <button id="consultarBtn-pedido">Consultar</button>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </center>
+    </section>
+
+    <script src="producto.js"></script>
+    <script src="pedido.js"></script>
+    <script src="proveedor.js"></script>
+    <script src="empleado.js"></script>
+    <script src="cargo.js"></script>
+    <script src="clientes.js"></script>
+    <script src="script.js"></script>
+    <SCRIPT LANGUAGE="JavaScript">
+        history.forward()
+    </SCRIPT>
+
+</body>
+
+</html>
